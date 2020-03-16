@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.BloodDetailActivity">
+
+
+    <com.qmuiteam.qmui.widget.QMUITopBarLayout
+        android:id="@+id/blood_topbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_03" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BLOOD PRESSURE"
+            android:textColor="#6f6376"
+            android:textSize="15sp" />
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/circle_bg">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="SYS"
+                    android:textColor="#b7b7ba"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/sys"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#6f6376"
+                    android:textSize="35sp"
+                    tools:text="73" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="mmHG"
+                    android:textColor="#b7b7ba"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="DIA"
+                    android:textColor="#b7b7ba"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/dia"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#6f6376"
+                    android:textSize="35sp"
+                    tools:text="73" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="mmHG"
+                    android:textColor="#b7b7ba"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </FrameLayout>
+
+    <com.jaygoo.widget.RangeSeekBar
+        android:id="@+id/sys_seek_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="18dp"
+        app:rsb_gravity="center"
+        app:rsb_max="200"
+        app:rsb_min="60"
+        app:rsb_mode="single"
+        app:rsb_progress_default_color="#ebebeb"
+        app:rsb_progress_drawable="@drawable/progress"
+        app:rsb_progress_height="3dp"
+        app:rsb_thumb_drawable="@drawable/thumb"
+        app:rsb_thumb_height="12dp"
+        app:rsb_thumb_width="12dp" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginEnd="18dp">
+
+        <TextView
+            android:id="@+id/start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="60"
+            android:textColor="#b7b7ba"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="130"
+            android:textColor="#b7b7ba"
+            app:layout_constraintBottom_toBottomOf="@id/start"
+            app:layout_constraintLeft_toRightOf="@id/start"
+            app:layout_constraintRight_toLeftOf="@id/end" />
+
+        <TextView
+            android:id="@+id/end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="200"
+            android:textColor="#b7b7ba"
+            app:layout_constraintBottom_toBottomOf="@id/start"
+            app:layout_constraintRight_toRightOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.jaygoo.widget.RangeSeekBar
+        android:id="@+id/dia_seek_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginEnd="18dp"
+        app:rsb_gravity="center"
+        app:rsb_max="200"
+        app:rsb_min="60"
+        app:rsb_mode="single"
+        app:rsb_progress_default_color="#ebebeb"
+        app:rsb_progress_drawable="@drawable/progress"
+        app:rsb_progress_height="3dp"
+        app:rsb_thumb_drawable="@drawable/thumb"
+        app:rsb_thumb_height="12dp"
+        app:rsb_thumb_width="12dp" />
+
+</LinearLayout>

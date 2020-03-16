@@ -1,0 +1,6 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:state_checked="false" android:drawable="@drawable/home_page_nol_icon01"></item>
+    <item android:state_checked="true" android:drawable="@drawable/home_page_sel_icon01"></item>
+
+</selector>
