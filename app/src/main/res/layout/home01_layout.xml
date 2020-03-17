@@ -646,60 +646,60 @@
     </androidx.core.widget.NestedScrollView>
 
     <!--假的  占位-->
-<!--    <RadioGroup-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="50dp"-->
-<!--        android:orientation="horizontal">-->
+    <!--    <RadioGroup-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="50dp"-->
+    <!--        android:orientation="horizontal">-->
 
-<!--        <RadioButton-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_gravity="center_vertical"-->
-<!--            android:layout_weight="1"-->
-<!--            android:button="@null"-->
-<!--            android:drawableTop="@drawable/home_page_sel_icon01"-->
-<!--            android:gravity="center"-->
-<!--            android:text="홈"-->
-<!--            android:textColor="#1d7cfc"-->
-<!--            android:textSize="10sp" />-->
+    <!--        <RadioButton-->
+    <!--            android:layout_width="0dp"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_gravity="center_vertical"-->
+    <!--            android:layout_weight="1"-->
+    <!--            android:button="@null"-->
+    <!--            android:drawableTop="@drawable/home_page_sel_icon01"-->
+    <!--            android:gravity="center"-->
+    <!--            android:text="홈"-->
+    <!--            android:textColor="#1d7cfc"-->
+    <!--            android:textSize="10sp" />-->
 
-<!--        <RadioButton-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_gravity="center_vertical"-->
-<!--            android:layout_weight="1"-->
-<!--            android:button="@null"-->
-<!--            android:drawableTop="@drawable/home_page_nol_icon02"-->
-<!--            android:gravity="center"-->
-<!--            android:text="진료"-->
-<!--            android:textColor="#666666"-->
-<!--            android:textSize="10sp" />-->
+    <!--        <RadioButton-->
+    <!--            android:layout_width="0dp"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_gravity="center_vertical"-->
+    <!--            android:layout_weight="1"-->
+    <!--            android:button="@null"-->
+    <!--            android:drawableTop="@drawable/home_page_nol_icon02"-->
+    <!--            android:gravity="center"-->
+    <!--            android:text="진료"-->
+    <!--            android:textColor="#666666"-->
+    <!--            android:textSize="10sp" />-->
 
-<!--        <RadioButton-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_gravity="center_vertical"-->
-<!--            android:layout_weight="1"-->
-<!--            android:button="@null"-->
-<!--            android:drawableTop="@drawable/home_page_nol_icon03"-->
-<!--            android:gravity="center"-->
-<!--            android:text="디바이스"-->
-<!--            android:textColor="#666666"-->
-<!--            android:textSize="10sp" />-->
+    <!--        <RadioButton-->
+    <!--            android:layout_width="0dp"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_gravity="center_vertical"-->
+    <!--            android:layout_weight="1"-->
+    <!--            android:button="@null"-->
+    <!--            android:drawableTop="@drawable/home_page_nol_icon03"-->
+    <!--            android:gravity="center"-->
+    <!--            android:text="디바이스"-->
+    <!--            android:textColor="#666666"-->
+    <!--            android:textSize="10sp" />-->
 
-<!--        <RadioButton-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_gravity="center_vertical"-->
-<!--            android:layout_weight="1"-->
-<!--            android:button="@null"-->
-<!--            android:drawableTop="@drawable/home_page_nol_icon04"-->
-<!--            android:gravity="center"-->
-<!--            android:text="마이페이지"-->
-<!--            android:textColor="#666666"-->
-<!--            android:textSize="10sp" />-->
+    <!--        <RadioButton-->
+    <!--            android:layout_width="0dp"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_gravity="center_vertical"-->
+    <!--            android:layout_weight="1"-->
+    <!--            android:button="@null"-->
+    <!--            android:drawableTop="@drawable/home_page_nol_icon04"-->
+    <!--            android:gravity="center"-->
+    <!--            android:text="마이페이지"-->
+    <!--            android:textColor="#666666"-->
+    <!--            android:textSize="10sp" />-->
 
 
-<!--    </RadioGroup>-->
+    <!--    </RadioGroup>-->
 
 </LinearLayout>

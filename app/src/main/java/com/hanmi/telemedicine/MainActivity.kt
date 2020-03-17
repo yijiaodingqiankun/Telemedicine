@@ -5,11 +5,13 @@ import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
 import android.content.pm.ActivityInfo
+import android.os.Bundle
 import android.util.Log
 import android.widget.FrameLayout
 import android.widget.RadioGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.ViewModelProvider
 import com.hanmi.telemedicine.activity.*
 import com.hanmi.telemedicine.common.BaseActivity
@@ -26,11 +28,10 @@ import com.jakewharton.rxbinding3.view.clicks
 import com.qmuiteam.qmui.util.QMUIStatusBarHelper
 
 
-class MainActivity : BaseActivity() {
+class MainActivity : FragmentActivity() {
 
     val TAG = MainActivity::class.java.simpleName
 
-    private lateinit var binding: Home01LayoutBinding
     private lateinit var model: HomeViewModel
     lateinit var mainBinding: ActivityMainBinding
 
@@ -41,34 +42,52 @@ class MainActivity : BaseActivity() {
 //    private lateinit var rg_main: RadioGroup
 
     lateinit var fragments: ArrayList<BaseFragment>
-    override fun beforeLayout() {
-        super.beforeLayout()
-        //        binding = Home01LayoutBinding.inflate(layoutInflater)
-        mainBinding = ActivityMainBinding.inflate(layoutInflater)
+
+    private fun initTopUI() {
+        QMUIStatusBarHelper.translucent(this)
+        QMUIStatusBarHelper.setStatusBarLightMode(this)
+        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
     }
 
-    override fun setLayout() {
-
-
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        //
+        initTopUI()
+        mainBinding = ActivityMainBinding.inflate(layoutInflater)
+        //
         setContentView(mainBinding.root)
+        //
+        addFragment()
+        rgListener()
+        mainBinding.rgMain.check(R.id.rt_home)
+    }
 
-        // test
+//    override fun beforeLayout() {
+//        super.beforeLayout()
+//        //        binding = Home01LayoutBinding.inflate(layoutInflater)
+//        mainBinding = ActivityMainBinding.inflate(layoutInflater)
+//    }
+
+//    override fun setLayout() {
+//        setContentView(mainBinding.root)
+
+    // test
 //        fl_main = findViewById<FrameLayout>(R.id.fl_main)
 //        rg_main = findViewById<RadioGroup>(R.id.rg_main)
 
 
 //        setContentView(R.layout.home01_layout)
 //        setContentView(binding.root)
-        //
+    //
 //        model = ViewModelProvider(this).get(HomeViewModel::class.java)
 //
 //
 //        bindClicks()
 
-        addFragment()
-        rgListener()
-        mainBinding.rgMain.check(R.id.rt_home)
-    }
+//        addFragment()
+//        rgListener()
+//        mainBinding.rgMain.check(R.id.rt_home)
+//    }
 
     private fun rgListener() {
         mainBinding.rgMain.setOnCheckedChangeListener(object : RadioGroup.OnCheckedChangeListener {
@@ -127,11 +146,12 @@ class MainActivity : BaseActivity() {
     }
 
     private fun addFragment() {
-        fragments = ArrayList<BaseFragment>()
-        fragments.add(HomeFragment())
-        fragments.add(MedicalFragment())
-        fragments.add(DeviceFragment())
-        fragments.add(MineFragment())
+        fragments = ArrayList<BaseFragment>().apply {
+            add(HomeFragment())
+            add(MedicalFragment())
+            add(DeviceFragment())
+            add(MineFragment())
+        }
     }
 
 
@@ -141,31 +161,30 @@ class MainActivity : BaseActivity() {
         if (resultCode != Activity.RESULT_OK || data == null) return
 
         LogUtil.e(TAG, "onActivityResult:  requestCode: ${requestCode}   resultCode: ${resultCode}")
-        when (requestCode) {
-            KeyConstants.TEMPERATURE -> {
-                model.temperature = data.getStringExtra("temperature") ?: ""
-                binding.home01Table1Center.text = model.temperature
-            }
-            KeyConstants.BLOOD_PRESSURE -> {
-                model.bloodPressureSys = data.getStringExtra("blood_pressure_sys") ?: ""
-                model.bloodPressureDia = data.getStringExtra("blood_pressure_dia") ?: ""
-                binding.home01Table2Center.text =
-                    model.bloodPressureSys + "/" + model.bloodPressureDia
-            }
-            KeyConstants.BREATH_RATE -> {
-                model.breath_rate = data.getStringExtra("breath_rate") ?: ""
-                binding.home01Table3Center.text = model.breath_rate
-            }
-            KeyConstants.OXYGEN_SATURATION -> {
-                model.oxygenSaturation = data.getStringExtra("oxygen_saturation") ?: ""
-                binding.home01Table4Center.text = model.oxygenSaturation
-            }
-            KeyConstants.HEART_RATE -> {
-                model.heart_rate = data.getStringExtra("heart_rate") ?: ""
-                binding.home01Table6Center.text = model.heart_rate
-            }
-
-        }
+//        when (requestCode) {
+//            KeyConstants.TEMPERATURE -> {
+//                model.temperature = data.getStringExtra("temperature") ?: ""
+//                binding.home01Table1Center.text = model.temperature
+//            }
+//            KeyConstants.BLOOD_PRESSURE -> {
+//                model.bloodPressureSys = data.getStringExtra("blood_pressure_sys") ?: ""
+//                model.bloodPressureDia = data.getStringExtra("blood_pressure_dia") ?: ""
+//                binding.home01Table2Center.text =
+//                    model.bloodPressureSys + "/" + model.bloodPressureDia
+//            }
+//            KeyConstants.BREATH_RATE -> {
+//                model.breath_rate = data.getStringExtra("breath_rate") ?: ""
+//                binding.home01Table3Center.text = model.breath_rate
+//            }
+//            KeyConstants.OXYGEN_SATURATION -> {
+//                model.oxygenSaturation = data.getStringExtra("oxygen_saturation") ?: ""
+//                binding.home01Table4Center.text = model.oxygenSaturation
+//            }
+//            KeyConstants.HEART_RATE -> {
+//                model.heart_rate = data.getStringExtra("heart_rate") ?: ""
+//                binding.home01Table6Center.text = model.heart_rate
+//            }
+//        }
     }
 
 
